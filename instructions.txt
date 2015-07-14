@@ -1,0 +1,30 @@
+Instructions:
+GoogleWeather utilizes the Google Weather API.  While Google Weather API is being used in iGoogle to obtain the weather information, the API itself is not officially public yet.  Please do expect changes in the future.  
+
+GoogleWeather accepts three parameters and they are as folows,
+1) Place: This is a required field.  You can pass in the zip code (i.e. 12203), City Name followed by State (i.e. Albany, NY), or City Name followed by Country Name (i.e. London, England).
+2) Language: This is an optional field.  You must pass in an ISO 639-1 Language Code. For a list of ISO 639-1 codes, please go to http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes.  By default, it is set to English (i.e. en).
+3) Unit: This is an optional field. You can pass in a C (Celsius) or an F (Fahrenheit). By default, it is set to F (i.e. Fahrenheit).  
+
+You can run test_google_weather.cfm to see a demo of the function.
+
+The function returns a struct with the following information.
+1) Forecast City
+2) Forecast Date
+3) Forecast Postal Code -- the actual postal code would only be there if available.
+4) Forecast Unit
+5) Forecast Date Time 
+6) Current Condition (i.e. Sunny, Cloudy, ...etc.)
+7) Current Temperature (both in Celcius and in Fahrenheit)
+8) Wind Condition
+9) Icon -- the icon that is associated to the condition. (i.e. if the condition were sunny, the icon would show a sun.)
+
+Google Weather API returns the forecast information of four days including the current day.  For example, if today were Saturday, Google Weather API would return the forecast information of today (Saturday), Sunday, Monday, and Tuesday.  The following set of information would be returned.
+
+1) Forecast Condition Condition
+2) Forecast Condition Day of Week
+3) Forecast Condition High
+4) Forecast Condition Low
+5) Forecast Condition Icon
+
+With the exception of current temperature, all the other temperatures are returned in Fahrenheit.  
